@@ -41,9 +41,6 @@ export default function AppNavbar() {
           {!token && <DropdownItem as={Link} to="/login"><span className='block size-full transition-none me-auto text-gray-400 hover:text-sky-700 dark:hover:text-white'>Login</span></DropdownItem>}
           {!token && <DropdownItem as={Link} to="/register" ><span className='block size-full transition-none me-auto text-gray-400 hover:text-sky-700 dark:hover:text-white'>Register</span></DropdownItem>}
           {token && <DropdownItem as={Link} to="/profile" ><span className='block size-full transition-none me-auto text-gray-400 hover:text-sky-700 dark:hover:text-white'>Profile</span></DropdownItem>}
-        <DropdownItem >
-          <span className='flex justify-between items-center size-full transition-none text-gray-400 hover:text-sky-700 dark:hover:text-white'>mode </span>
-          </DropdownItem>
           
           {token &&  <DropdownDivider/> &&<DropdownItem as="button" 
           onClick={()=>{signOut(); navigate("/login");}}
@@ -57,7 +54,7 @@ export default function AppNavbar() {
       {token && <NavbarCollapse className="ms-auto">
         <NavLink  as={NavLink} to="/" className={({isActive}) => isActive? `text-sky-600  dark:text-white ` : 'text-gray-400'} >Home</NavLink>
         <NavLink  as={NavLink} to="/profile" className={({isActive}) => isActive? `text-sky-600  dark:text-white` : 'text-gray-400'} >Profile</NavLink>
-        <Switch className="ms-auto" />
+        <Switch className="md:ms-auto me-auto md:pt-0 pt-5" />
 
       </NavbarCollapse>}
     </Navbar>
