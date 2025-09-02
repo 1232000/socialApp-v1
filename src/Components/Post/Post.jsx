@@ -10,6 +10,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import UpdatePost from '../UpdatePost/UpdataPost';
 import HandleComment from '../HandleComment/HandleComment';
+import profileImg from  '../../assets/images/profileImg.png';
+
 
 export default function Post({post , isPostDetails }) {
 
@@ -75,7 +77,7 @@ export default function Post({post , isPostDetails }) {
         <div className="p-2 bg-blue-100 dark:bg-gray-500 rounded-lg mt-3 w-full">
            <HandleComment 
              userName={post?.comments[0]?.commentCreator?.name}
-             userImg={post?.comments[0]?._id === UserData?._id? UserData.photo : post?.comments[0]?.commentCreator?.photo.includes("undefined")? "https:cdn-icons-png.flaticon.com/512/5987/5987424.png" :  post?.comments[0]?.commentCreator?.photo}
+             userImg={post?.comments[0]?._id === UserData?._id? UserData.photo : post?.comments[0]?.commentCreator?.photo.includes("undefined")? profileImg :  post?.comments[0]?.commentCreator?.photo}
              creationDate={post?.comments[0]?.createdAt}
              userCommentId={post?.comments[0]?.commentCreator?._id}
              commentId={post?._id}
@@ -95,7 +97,7 @@ export default function Post({post , isPostDetails }) {
 
           <HandleComment 
             userName={comment?.commentCreator?.name}
-            userImg={comment?.commentCreator?._id === UserData?._id? UserData?.photo : comment?.commentCreator?.photo.includes("undefined")? "https://cdn-icons-png.flaticon.com/512/5987/5987424.png" : comment.commentCreator?.photo }
+            userImg={comment?.commentCreator?._id === UserData?._id? UserData?.photo : comment?.commentCreator?.photo.includes("undefined")? profileImg : comment.commentCreator?.photo }
             creationDate={comment?.createdAt}
             commentId={comment?._id}
             userCommentId={comment?.commentCreator?._id}
