@@ -1,0 +1,30 @@
+
+@import 'tailwindcss';
+
+@plugin 'flowbite-react/plugin/tailwindcss';
+@source '../.flowbite-react/class-list.json';
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap');
+
+@plugin 'flowbite/plugin';
+@source "./index.html";
+@source "./src/**/*.{js,jsx,ts,tsx}";
+@source "./node_modules/flowbite/**/*.js";
+@source "./node_modules/flowbite-react*.{js,jsx,ts,tsx}";
+
+
+@layer utilities{
+  .container{
+    @apply mx-auto px-4 sm:px-6 lg:px-20;
+  }
+  .min-h-page{
+    min-height: calc(100vh - 68px);
+  }
+}
+
+body{
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Edu NSW ACT Cursive", cursive;
+  overflow-x: hidden;
+}
